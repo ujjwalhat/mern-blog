@@ -15,35 +15,37 @@ import OnlyAdminPrivateRoute from "./components/OnlyAdminPrivateRoute";
 import CreatePost from "./pages/CreatePost";
 
 // Add the following import:
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
+import UpdatePost from "./pages/UpdatePost";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      
+
       {/* Add Toaster at a higher level */}
-      <Toaster position="top-right" reverseOrder={false}/>
+      <Toaster position="top-right" reverseOrder={false} />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-        
+
         {/* Private Routes */}
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
-        
+
         {/* Only Admin Private Routes */}
         <Route element={<OnlyAdminPrivateRoute />}>
           <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/update-post/:postId" element={<UpdatePost />} />
         </Route>
 
         <Route path="/projects" element={<Projects />} />
       </Routes>
-      
+
       <FooterCom />
     </BrowserRouter>
   );
