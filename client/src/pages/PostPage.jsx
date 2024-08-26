@@ -93,7 +93,7 @@ export default function PostPage() {
 
       <div className="flex flex-col justify-center items-center mb-5">
         <h1 className="text-xl mt-5">Recent articles</h1>
-        <div className="flex-wrap flex gap-1 mt-5 justify-center  ">
+        <div className="flex-wrap flex gap-4 mt-5 justify-center  ">
           {recentPosts?.map((post) => (
             <PostCard key={post._id} post={post} />
           ))}

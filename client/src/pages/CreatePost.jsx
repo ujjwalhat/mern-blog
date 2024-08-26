@@ -31,7 +31,7 @@ function CreatePost() {
       setImageUploadError(null);
       const storage = getStorage(app);
       // biome-ignore lint/style/useTemplate: <explanation>
-      const fileName = new Date().getTime + "-" + file.name;
+      const fileName = new Date().getTime() + "-" + file.name;
       const storageRef = ref(storage, fileName);
       const uploadTask = uploadBytesResumable(storageRef, file);
       uploadTask.on(
@@ -86,6 +86,13 @@ function CreatePost() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">Create a post</h1>
@@ -137,7 +144,7 @@ function CreatePost() {
               "Upload Image"
             )}
           </Button>
-          <Toaster  />
+          <Toaster />
         </div>
         {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
         {formData.image && (
@@ -154,6 +161,7 @@ function CreatePost() {
           placeholder="Write something..."
           className="h-72 mb-12"
           onChange={(value) => setFormData({ ...formData, content: value })}
+          onKeyDown={handleKeyDown} // Attach keydown handler here
         />
         <Button type="submit" gradientDuoTone="purpleToPink">
           Publish
