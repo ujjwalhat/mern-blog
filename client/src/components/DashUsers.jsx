@@ -69,12 +69,15 @@ function DashUsers() {
       console.log(error.message);
     }
   };
+
+  // Conditional rendering for the loading spinner
   if (loading)
     return (
-      <div className="flex-grow flex gap-2 justify-center items-center">
+      <div className="flex-grow flex justify-center items-center min-h-screen">
         <Spinner size="xl" />
       </div>
     );
+
   return (
     <div
       className="table-auto overflow-x-auto 
