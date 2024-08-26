@@ -17,6 +17,7 @@ import CreatePost from "./pages/CreatePost";
 // Add the following import:
 import { Toaster } from "react-hot-toast";
 import UpdatePost from "./pages/UpdatePost";
+import PostPage from "./pages/PostPage";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         </Route>
 
         <Route path="/projects" element={<Projects />} />
+        <Route path="/post/:postSlug" element={<PostPage />} />
       </Routes>
 
       <FooterCom />

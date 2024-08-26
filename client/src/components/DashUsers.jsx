@@ -1,13 +1,13 @@
-import { Button, Modal, Table, TableRow } from "flowbite-react";
+import { Button, Modal, Spinner, Table, TableRow } from "flowbite-react";
 import React, { useEffect, useState } from "react";
-import { FaCheck, FaCross, FaTimes } from "react-icons/fa";
+import { FaCheck, FaTimes } from "react-icons/fa";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
 
 function DashUsers() {
   const { currentUser } = useSelector((state) => state.user);
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); // Loading state
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [userIdToDelete, setUserIdToDelete] = useState("");
@@ -69,6 +69,12 @@ function DashUsers() {
       console.log(error.message);
     }
   };
+  if (loading)
+    return (
+      <div className="flex-grow flex gap-2 justify-center items-center">
+        <Spinner size="xl" />
+      </div>
+    );
   return (
     <div
       className="table-auto overflow-x-auto 
@@ -77,9 +83,7 @@ function DashUsers() {
         dark:scrollbar-track-slate-700
          dark:scrollbar-thumb-slate-500"
     >
-      {loading ? (
-        <p>Loading Users...</p> // Display a loading message or spinner
-      ) : currentUser.isAdmin && users.length > 0 ? (
+      {currentUser.isAdmin && users.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>

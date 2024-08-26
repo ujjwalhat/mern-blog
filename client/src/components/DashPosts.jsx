@@ -1,4 +1,4 @@
-import { Button, Modal, Table, TableRow } from "flowbite-react";
+import { Button, Modal, Spinner, Table, TableRow } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { useSelector } from "react-redux";
@@ -76,6 +76,12 @@ function DashPosts() {
       console.log(error.message);
     }
   };
+  if (loading)
+    return (
+      <div className="flex-grow flex gap-2 justify-center items-center">
+        <Spinner size="xl" />
+      </div>
+    );
 
   return (
     <div
@@ -85,9 +91,7 @@ function DashPosts() {
         dark:scrollbar-track-slate-700
          dark:scrollbar-thumb-slate-500"
     >
-      {loading ? (
-        <p>Loading posts...</p> // Display a loading message or spinner
-      ) : currentUser.isAdmin && userPosts.length > 0 ? (
+      {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
             <Table.Head>
