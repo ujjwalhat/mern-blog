@@ -1,6 +1,7 @@
 import { Button, Spinner } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import CallToActions from "../components/CallToActions";
 
 function PostPage() {
   const { postSlug } = useParams();
@@ -61,10 +62,17 @@ function PostPage() {
           {(post?.content.length / 1000).toFixed(0)} mins read
         </span>
       </div>
+
+      {/* biome-ignore lint/style/useSelfClosingElements: <explanation> */}
       <div
         className="p-3 max-w-2xl mx-auto w-full post-content"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+        // biome-ignore lint/security/noDangerouslySetInnerHtmlWithChildren: <explanation>
         dangerouslySetInnerHTML={{ __html: post?.content }}
       ></div>
+      <div className="max-w-4xl mx-auto w-full">
+        <CallToActions />
+      </div>
     </main>
   );
 }
