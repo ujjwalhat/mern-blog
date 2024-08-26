@@ -112,6 +112,12 @@ function CommentSection({ postId }) {
       console.log(err.message);
     }
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
   return (
     <div className="max-w-2xl mx-auto w-full p-3">
       {currentUser ? (
@@ -147,6 +153,7 @@ function CommentSection({ postId }) {
             rows="3"
             maxLength="200"
             onChange={(e) => setComment(e.target.value)}
+            onKeyDown={handleKeyDown}
             value={comment}
           />
           <div className="flex justify-between items-center mt-5 ">
