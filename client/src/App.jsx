@@ -18,10 +18,12 @@ import CreatePost from "./pages/CreatePost";
 import { Toaster } from "react-hot-toast";
 import UpdatePost from "./pages/UpdatePost";
 import PostPage from "./pages/PostPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Header />
 
       {/* Add Toaster at a higher level */}
