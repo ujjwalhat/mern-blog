@@ -30,7 +30,7 @@ export default function FooterCom() {
               <Footer.Title title="About" />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href="https://www.rkoverseas.onrender.com"
+                  href="https:/rkoverseas.onrender.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

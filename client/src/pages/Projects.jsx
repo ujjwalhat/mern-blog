@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import CallToActions from "../components/CallToActions";
 
 const Projects = () => {
   return (
-    <div>Projects</div>
-  )
-}
+    <div>
+      <h1>Projects</h1>
+      <p>
+        Build fun and engaging projects while learning HTML, CSS, and
+        JavaScript!
+      </p>
+      <CallToActions/>
+    </div>
+  );
+};
 
-export default Projects
+export default Projects;
