@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import CallToActions from "../components/CallToActions";
+import CallToAction from "../components/CallToAction";
 import PostCard from "../components/PostCard";
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
         </Link>
       </div>
       <div className="p-3 bg-amber-100 dark:bg-slate-700 ">
-        <CallToActions />
+        <CallToAction />
       </div>
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 py-7">
         {posts?.length > 0 && (

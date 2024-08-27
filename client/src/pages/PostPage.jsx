@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CommentSection from "../components/CommentSection";
 import PostCard from "../components/PostCard";
-import CallToActions from "../components/CallToActions";
+import CallToAction from "../components/CallToAction";
 
 export default function PostPage() {
   const { postSlug } = useParams();
@@ -87,7 +87,7 @@ export default function PostPage() {
         dangerouslySetInnerHTML={{ __html: post?.content }}
       />
       <div className="max-w-4xl mx-auto w-full">
-        <CallToActions />
+        <CallToAction />
       </div>
       <CommentSection postId={post._id} />
 

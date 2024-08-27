@@ -15,7 +15,6 @@ function Search() {
   const navigate = useNavigate();
 
   const location = useLocation();
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get("searchTerm") || "";
