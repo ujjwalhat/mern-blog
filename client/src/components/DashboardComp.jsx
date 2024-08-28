@@ -143,9 +143,11 @@ function DashboardComp() {
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent users</h1>
 
-            <Button outline gradientDuoTone="purpleToBlue">
-              <Link to={"/dashboard?tab=users"}>See all</Link>
-            </Button>
+            <Link to={"/dashboard?tab=users"}>
+              <Button outline gradientDuoTone="purpleToBlue">
+                See all
+              </Button>
+            </Link>
           </div>
           <Table hoverable>
             <Table.Head>
@@ -173,9 +175,11 @@ function DashboardComp() {
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent comments</h1>
 
-            <Button outline gradientDuoTone="purpleToBlue">
-              <Link to={"/dashboard?tab=comments"}>See all</Link>
-            </Button>
+            <Link to={"/dashboard?tab=comments"}>
+              <Button outline gradientDuoTone="purpleToBlue">
+                See all
+              </Button>
+            </Link>
           </div>
           <Table hoverable>
             <Table.Head>
@@ -199,9 +203,11 @@ function DashboardComp() {
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent Post</h1>
 
-            <Button outline gradientDuoTone="purpleToBlue">
-              <Link to={"/dashboard?tab=posts"}>See all</Link>
-            </Button>
+            <Link to={"/dashboard?tab=posts"}>
+              <Button outline gradientDuoTone="purpleToBlue">
+                See all
+              </Button>
+            </Link>
           </div>
           <Table hoverable>
             <Table.Head>
